@@ -27,7 +27,12 @@ func Test_buildArray(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := buildArray(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
+			if got := buildArray1(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("buildArray() = %v, want %v", got, tt.want)
+			}
+		})
+		t.Run(tt.name, func(t *testing.T) {
+			if got := buildArray2(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("buildArray() = %v, want %v", got, tt.want)
 			}
 		})
